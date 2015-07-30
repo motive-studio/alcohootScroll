@@ -3,7 +3,7 @@ html {
 }
 
 .demo {
-	height: 2000px;
+	height: 1000px;
 }
 
 .spacer {
@@ -14,13 +14,25 @@ html {
 	min-height: 1px;
 }
 
-.mouthpiece {
-	max-width: 30px;
-	position: relative;
-	left: 300px;
-	bottom: 55px;
+.mainScene {
+	overflow: hidden;
+}
+
+.device {
+	z-index: 1;
 }
 
 .phone {
 	padding-top: 500px;
 }
+
+.mouthpiece {
+	max-width: 30px;
+	top: -446px;
+	position: relative;
+	opacity: 0;
+	left: 500px;
+	z-index: -1;
+
+}
+

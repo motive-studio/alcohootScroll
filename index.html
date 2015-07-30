@@ -19,44 +19,56 @@
 	<div class="spacer"></div>
 	<div id="sceneTrigger" class="trigger"></div>
 	<div class="mainScene" id="scenePin">
+		
 		<div id="devicePin">
 			<img src="img/unit.png" id="device">
 		</div>
-		<img src="img/mouthpiece.png" id="mouthpiece" class="mouthpiece">
+		
 		<img src="img/alcohootapp.png" id="phone" class="phone">
+
+		<img src="img/mouthpiece.png" id="mouthpiece" class="mouthpiece">
+
 	</div>
 
 	<div class="spacer"></div>
 
 </section>
-	<script>
+
+
+
+<script>
 		var controller = new ScrollMagic.Controller();
 		
+		// Start Main Scene
 		new ScrollMagic.Scene({duration: 1000, triggerElement: "#sceneTrigger"})
 		   .setPin("#scenePin")
 		   .addTo(controller);
 
+		// Start Device Animation
 		var deviceTween = new TweenMax.to('#device', 1, {
 		   rotation: 90,
-		   x: 180
+		   x: 160
 		});
 
-		new ScrollMagic.Scene({triggerElement: "#sceneTrigger", offset: 200})
+		new ScrollMagic.Scene({triggerElement: "#sceneTrigger", duration: 200, offset: 200})
 		   .setTween(deviceTween)
 		   .addTo(controller);
 
-		new ScrollMagic.Scene({triggerElement: "#sceneTrigger", offset: 400})
+		// Start Phone Animation
+		new ScrollMagic.Scene({triggerElement: "#sceneTrigger", duration: 200, offset: 400})
 		   .setTween("#phone", 1, {paddingTop: "0", y: -40})
 		   .addTo(controller);
+
+		// Start Mouthpiece Animation
+		new ScrollMagic.Scene({triggerElement: "#sceneTrigger", duration: 200, offset: 600})
+		   .setTween("#mouthpiece", 1, {x: -450, opacity: 1})
+		   .addTo(controller);
+
 
 
 
 
 	</script>
-
-
-
-
 
 
 
