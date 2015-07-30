@@ -1,12 +1,16 @@
+html {
+	padding: 25px;
+}
+
 .demo {
 	height: 2000px;
 }
 
 .spacer {
-	min-height: 200px;
+	min-height: 800px;
 }
 
-.trigger1 {
+.trigger {
 	min-height: 1px;
 }
 
@@ -15,4 +19,8 @@
 	position: relative;
 	left: 300px;
 	bottom: 55px;
+}
+
+.phone {
+	padding-top: 500px;
 }
