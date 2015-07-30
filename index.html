@@ -1,0 +1,71 @@
+<head>
+
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/modernizr.custom.min.js"></script>
+
+	<script src="js/TweenMax.min.js"></script>
+	<script src="js/ScrollMagic.js"></script>
+	
+	<script src="js/animation.gsap.js"></script>
+	<script type="text/javascript" src="js/debug.addIndicators.js"></script>
+
+</head>
+
+<section class="demo">
+	<div class="spacer"></div>
+	<div id="trigger1" class="trigger1"></div>
+	
+	<div id="pin1">
+		<div id="trigger2" class="trigger1"></div>
+		<img src="img/unit.png">
+	</div>
+
+	<div id="trigger2" class="trigger2"></div>
+
+	<img src="img/mouthpiece.png" id="mouthpiece" class="mouthpiece">
+
+	<div id="pin2">
+			<img src="img/alcohootapp.png" id="block">
+	</div>
+
+
+
+</section>
+	<script>
+		$(function () { 
+
+			var controller = new ScrollMagic.Controller();
+			
+			var blockTween = new TweenMax.to('#mouthpiece', 0.5, {
+		    left: '100px',
+		    transform: 'rotate(180deg)'
+		  	});
+
+			var containerScene = new ScrollMagic.Scene({
+      		triggerElement: '#trigger1',
+      		duration: 500
+		   })
+		   .setTween(blockTween)
+		   .setPin('#pin1')
+		   .addIndicators()
+		   .addTo(controller);
+		});
+	</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
