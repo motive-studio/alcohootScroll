@@ -21,9 +21,11 @@
 	<div class="mainScene" id="scenePin">
 		
 		<div id="devicePin">
-			<img src="img/unit.png" id="device">
+			<img src="img/Device-unlit.png" id="device" class="device">
+			<img src="img/Device-jack.png" id="aux" class="aux">
+			<img src="img/Device-lit.png" id="deviceLit" class="deviceLit">
 		</div>
-		
+
 		<img src="img/alcohootapp.png" id="phone" class="phone">
 
 		<img src="img/mouthpiece.png" id="mouthpiece" class="mouthpiece">
@@ -40,23 +42,44 @@
 		var controller = new ScrollMagic.Controller();
 		
 		// Start Main Scene
-		new ScrollMagic.Scene({duration: 1000, triggerElement: "#sceneTrigger"})
+		new ScrollMagic.Scene({duration: 1000, triggerElement: "#sceneTrigger", offset: 300})
 		   .setPin("#scenePin")
 		   .addTo(controller);
 
 		// Start Device Animation
 		var deviceTween = new TweenMax.to('#device', 1, {
 		   rotation: 90,
-		   x: 160
+		   x: 200
 		});
 
-		new ScrollMagic.Scene({triggerElement: "#sceneTrigger", duration: 200, offset: 200})
+		new ScrollMagic.Scene({triggerElement: "#sceneTrigger", 
+			duration: 200, 
+			offset: 200})
 		   .setTween(deviceTween)
 		   .addTo(controller);
+
+		var deviceTweenLit = new TweenMax.to('#deviceLit', 1, {
+		   rotation: 90,
+		   x: 200,
+		   opacity: 1
+		});
+
+		new ScrollMagic.Scene({triggerElement: "#sceneTrigger", 
+			duration: 200, 
+			offset: 200})
+		   .setTween(deviceTweenLit)
+		   .addTo(controller);
+
+		
 
 		// Start Phone Animation
 		new ScrollMagic.Scene({triggerElement: "#sceneTrigger", duration: 200, offset: 400})
 		   .setTween("#phone", 1, {paddingTop: "0", y: -40})
+		   .addTo(controller);
+
+		// Start Aux Animation
+		new ScrollMagic.Scene({triggerElement: "#sceneTrigger", duration: 100, offset: 400})
+		   .setTween("#aux", 1, {paddingTop: "0", y: 60, opacity: 5})
 		   .addTo(controller);
 
 		// Start Mouthpiece Animation

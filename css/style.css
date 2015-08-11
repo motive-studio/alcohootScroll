@@ -18,21 +18,40 @@ html {
 	overflow: hidden;
 }
 
+.aux {
+	right: 14px;
+	position: relative;
+	z-index: -1;
+	opacity: 0;
+	max-width: 200px;
+	top: -80px;
+}
+
 .device {
 	z-index: 1;
+	max-width: 200px;
+}
+
+.deviceLit {
+	max-width: 200px;
+	opacity: 0;
+	position: relative;
+	right: 410px;
 }
 
 .phone {
 	padding-top: 500px;
+	width: 300px;
+	bottom: 35px;
+	position: relative;
 }
 
 .mouthpiece {
-	max-width: 30px;
-	top: -446px;
+	width: 40px;
+	top: -649px;
 	position: relative;
 	opacity: 0;
-	left: 500px;
+	left: 538px;
 	z-index: -1;
-
 }
 
